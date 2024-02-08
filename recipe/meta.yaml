@@ -27,6 +27,10 @@ requirements:
 test:
   imports:
     - simhash
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://leons.im/posts/a-python-implementation-of-simhash-algorithm/
