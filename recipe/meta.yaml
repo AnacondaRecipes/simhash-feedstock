@@ -33,13 +33,14 @@ test:
     - pip check
 
 about:
-  home: https://leons.im/posts/a-python-implementation-of-simhash-algorithm/
+  home: https://github.com/leonsim/simhash
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt
-  summary: This is a Python implementation of [Simhash](http://www.wwwconference.org/www2007/papers/paper215.pdf)
-
+  license_file: LICENSE
+  summary: This is a Python implementation of Simhash.
+  description: This is a Python implementation of Simhash.
   dev_url: https://github.com/leonsim/simhash
+  doc_url: https://leons.im/posts/a-python-implementation-of-simhash-algorithm/
 
 extra:
   recipe-maintainers:
