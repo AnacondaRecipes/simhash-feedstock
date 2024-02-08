@@ -1,11 +1,12 @@
 {% set version = "2.1.2" %}
+{% set name = "simhash" %}
 
 package:
-  name: simhash
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/simhash/simhash-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{name}}-{{ version }}.tar.gz
   sha256: 533bc8cf41e4e6dd83f0b1847363516bf3323e0fa92e63d9e6df4e281e882e1b
 
 build:
