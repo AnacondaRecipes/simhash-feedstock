@@ -1,38 +1,46 @@
 {% set version = "2.1.2" %}
+{% set name = "simhash" %}
 
 package:
-  name: simhash
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/simhash/simhash-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{name}}-{{ version }}.tar.gz
   sha256: 533bc8cf41e4e6dd83f0b1847363516bf3323e0fa92e63d9e6df4e281e882e1b
 
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<36]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >=3.6
+    - python
     - numpy
 
 test:
   imports:
     - simhash
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
-  home: https://leons.im/posts/a-python-implementation-of-simhash-algorithm/
+  home: https://github.com/leonsim/simhash
   license: MIT
   license_family: MIT
-  license_file: LICENSE.txt
-  summary: This is a Python implementation of [Simhash](http://www.wwwconference.org/www2007/papers/paper215.pdf)
-
+  license_file: LICENSE
+  summary: This is a Python implementation of Simhash.
+  description: This is a Python implementation of Simhash.
   dev_url: https://github.com/leonsim/simhash
+  doc_url: https://leons.im/posts/a-python-implementation-of-simhash-algorithm/
 
 extra:
   recipe-maintainers:
